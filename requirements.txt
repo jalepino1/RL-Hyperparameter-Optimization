@@ -1,0 +1,8 @@
+lightgbm
+xgboost
+gymnasium
+stable-baselines3
+tensorboard
+pandas
+numpy
+scikit-learn
