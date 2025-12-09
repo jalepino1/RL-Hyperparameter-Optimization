@@ -32,7 +32,6 @@ def evaluate_lgbm_config(
     model.fit(X_train, y_train)
     y_pred = model.predict(X_val)
 
-    # Older sklearn: mean_squared_error(...) doesn't accept squared=False
     mse = mean_squared_error(y_val, y_pred)
     rmse = np.sqrt(mse)
 
@@ -91,7 +90,7 @@ def run_limited_grid_search(
     if env is not None:
         grid = generate_param_grid_from_env(env)
     else:
-        # Fallback grid (kept small); you can tune these if needed
+        # Fallback grid (kept small); tune these if needed
         lr_values = [0.001, 0.005, 0.01, 0.05, 0.1]
         depth_values = [3, 5, 7, 10]
         leaves_values = [15, 31, 63, 100]
@@ -154,7 +153,7 @@ def train_rl_with_eval_budget(
     episode_rmses : list[float]
         Best RMSE observed in each episode (for plotting/comparison).
     step_history : list[dict]
-        Per‑step records (eval index, reward, RMSE, epsilon, etc.).
+        Per-step records (eval index, reward, RMSE, epsilon, etc.).
     eval_count : int
         Total number of environment steps / model evaluations used.
     """

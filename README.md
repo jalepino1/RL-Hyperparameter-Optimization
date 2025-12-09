@@ -64,7 +64,7 @@ HOW THE SYSTEM WORKS (ACCORDING TO CURRENT SOURCE CODE)
 (1) DATA LOADING (src/data_loader.py)
 ------------------------------------------------------------
 
-Your file performs:
+The file performs:
  - CSV loading
  - Timestamp conversion
  - Feature extraction:

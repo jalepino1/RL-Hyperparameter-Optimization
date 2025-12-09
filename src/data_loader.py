@@ -15,7 +15,6 @@ def load_energy_data(csv_path: str) -> Tuple[pd.DataFrame, pd.DataFrame, List[st
     """
     train = pd.read_csv(csv_path)
 
-    # ---- Feature engineering (copied from your notebook) ----
     train["time"] = pd.to_datetime(train["time"])
     train["year"] = train["time"].dt.year
     train["month"] = train["time"].dt.month
@@ -24,7 +23,6 @@ def load_energy_data(csv_path: str) -> Tuple[pd.DataFrame, pd.DataFrame, List[st
     train["dayofweek"] = train["time"].dt.dayofweek
     train["dayofyear"] = train["time"].dt.dayofyear
 
-    # Use the same features list you used in the notebook
     features = [
         "year",
         "month",
@@ -41,7 +39,7 @@ def load_energy_data(csv_path: str) -> Tuple[pd.DataFrame, pd.DataFrame, List[st
 
     target = "load"
 
-    # 80/20 split (same logic you used)
+    # 80/20 split
     split_idx = int(len(train) * 0.8)
     rl_train = train.iloc[:split_idx].copy()
     rl_val = train.iloc[split_idx:].copy()
