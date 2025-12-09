@@ -17,7 +17,7 @@ class EnergyForecastingEnv(gym.Env):
     - Step counter
 
     Action Space (product of choices):
-    - N learning rate values × N depth values × N num_leaves values × N min_child_samples values
+    - N learning rate values, N depth values, N num_leaves values, N min_child_samples values
 
     Reward: Multi-component shaping with performance, improvement, and stability signals
     """
